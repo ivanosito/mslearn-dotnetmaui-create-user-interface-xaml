@@ -12,9 +12,12 @@ public partial class MainPage : ContentPage
         {
             editor.Text = File.ReadAllText(_fileName);
         }
+
+        SaveButton.Clicked += OnSaveButtonClicked;
+        DeleteButton.Clicked += OnDeleteButtonClicked;
     }
 
-    void OnSaveButtonClicked(object sender, EventArgs e)
+    private void OnSaveButtonClicked(object sender, EventArgs e)
     {
         File.WriteAllText(_fileName, editor.Text);
     }
